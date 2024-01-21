@@ -6,47 +6,34 @@
           <!-- Mobile menu button-->
           <button type="button"
             class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-            aria-controls="mobile-menu" aria-expanded="false">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <!--
-            Icon when menu is closed.
-
-            Menu open: "hidden", Menu closed: "block"
-          -->
+            @click="toggleMobileMenu"
+          >
             <svg class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
               aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
             </svg>
-            <!--
-            Icon when menu is open.
-
-            Menu open: "block", Menu closed: "hidden"
-          -->
-            <svg class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-              aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg>
           </button>
         </div>
         
+        <!-- Picture Logo -->
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <div class="flex flex-shrink-0 items-center">
-            <img class="h-10 w-10 rounded-full object-cover" src="../../assets/YH_Picture.jpg"
-              alt="My Picture">
-          </div>
+          <img class="h-10 w-10 rounded-full object-cover" src="../../assets/YH_Picture.jpg"
+            alt="My Picture">
         </div>
+
+        <!-- Routing Buttons -->
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-end">
           <div class="hidden sm:ml-6 sm:block ml-auto">
             <div class="flex space-x-4">
-              <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
-                aria-current="page">Home</a>
-              <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About Me</a>
-              <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-              <a href="#"
-                class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Contact Me</a>
+              <router-link
+                v-for="(route, index) in routes"
+                :key="index"
+                :to="route.path"
+                :class="buttonStyle(route.path)"
+                :aria-current="isCurrentRoute(route.path)"
+              >
+                {{ route.label }}
+              </router-link>
             </div>
           </div>
         </div>
@@ -54,17 +41,17 @@
     </div>
 
     <!-- Mobile menu, show/hide based on menu state. -->
-    <div class="sm:hidden" id="mobile-menu">
+    <div class="sm:hidden" v-show="isMobileMenuOpen">
       <div class="space-y-1 px-2 pb-3 pt-2">
-        <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium"
-          aria-current="page">Home</a>
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About Me</a>
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-        <a href="#"
-          class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Contact Me</a>
+        <router-link
+          v-for="(route, index) in routes"
+          :key="index"
+          :to="route.path"
+          :class="buttonStyle(route.path)"
+          :aria-current="isCurrentRoute(route.path)"
+        >
+          {{ route.label }}
+        </router-link>
       </div>
     </div>
   </nav>
@@ -73,6 +60,29 @@
 <script>
 export default {
   name: "NavBar",
+  data() {
+    return {
+      isMobileMenuOpen: false,
+      routes: [
+        { path: '/', label: 'Home' },
+        { path: '/about', label: 'About Me' },
+        { path: '/projects', label: 'Projects' },
+        { path: '/contact', label: 'Contact Me' },
+      ],
+    };
+  },
+  methods: {
+    toggleMobileMenu() {
+      this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    },
+    isCurrentRoute(route) {
+      return this.$route.path === route ? 'page' : null;
+    },
+    buttonStyle(route) {
+      return this.$route.path === route ? 
+        "bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" : 
+        "text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium";
+    },
+  },
 };
 </script>
-  

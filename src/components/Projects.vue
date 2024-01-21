@@ -3,9 +3,10 @@
     About
   </div>
 </template>
-
-<script>
+  
+  <script>
 export default {
-  name: 'AboutPage'
-}
+  name: "ProjectsPage",
+};
 </script>
+  
