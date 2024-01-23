@@ -17,7 +17,7 @@
         
         <!-- Picture Logo -->
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <img class="h-10 w-10 rounded-full object-cover" src="../../assets/YH_Picture.jpg"
+          <img class="h-10 w-10 rounded-full object-cover" src="@/assets/pictures/YH_Picture.jpg"
             alt="My Picture">
         </div>
 

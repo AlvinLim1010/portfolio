@@ -93,7 +93,7 @@
 
     <div class="w-full sm:w-2/5 p-10" style="height: calc(100vh - 156px);">
       <div class="bg-white p-4 rounded shadow-md h-full">
-        ThreeJS Animation
+        ThreeJS Dog Animation
       </div>
     </div>
   </div>

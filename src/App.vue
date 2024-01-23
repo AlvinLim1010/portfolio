@@ -8,7 +8,7 @@
 
 <style scoped>
 .gradient-bg {
-  background: linear-gradient(to bottom, #B39DDB, #6F42C1); /* Adjust the color values as needed */
+  background: linear-gradient(to bottom, #B0BEC5, #78909C);
 }
 </style>
 
