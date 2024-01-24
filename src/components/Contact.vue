@@ -91,9 +91,12 @@
       </div>
     </div>
 
-    <div class="w-full sm:w-2/5 p-10" style="height: calc(100vh - 156px);">
-      <div class="bg-white p-4 rounded shadow-md h-full">
-        ThreeJS Dog Animation
+    <div class="w-full sm:w-2/5 p-10">
+      <div class="bg-white p-4 rounded shadow-md mb-4" style="height: calc(70vh - 174px);">
+        ThreeJS Dog Animation 1
+      </div>
+      <div class="bg-white p-4 rounded shadow-md" style="height: calc(20vh);">
+        Email Address & Phone Number
       </div>
     </div>
   </div>

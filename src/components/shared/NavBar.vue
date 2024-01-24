@@ -1,4 +1,5 @@
 <template>
+  <div class="sticky top-0 z-50">
   <nav class="bg-gray-800">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
@@ -17,8 +18,10 @@
         
         <!-- Picture Logo -->
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <img class="h-10 w-10 rounded-full object-cover" src="@/assets/pictures/YH_Picture.jpg"
-            alt="My Picture">
+          <a @click="openModal">
+            <img class="h-10 w-10 rounded-full object-cover" src="@/assets/pictures/YH_Picture.jpg"
+              alt="My Picture">
+          </a>
         </div>
 
         <!-- Routing Buttons -->
@@ -55,13 +58,25 @@
       </div>
     </div>
   </nav>
+    <Modal 
+      :isOpen="isModalOpen" 
+      @close="closeModal" 
+    />
+  </div>
+
 </template>
   
 <script>
+import Modal from './Modal.vue';
+
 export default {
   name: "NavBar",
+  components: {
+    Modal,
+  },
   data() {
     return {
+      isModalOpen: false,
       isMobileMenuOpen: false,
       routes: [
         { path: '/', label: 'Home' },
@@ -72,6 +87,12 @@ export default {
     };
   },
   methods: {
+    openModal() {
+      this.isModalOpen = true;
+    },
+    closeModal() {
+      this.isModalOpen = false;
+    },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
     },

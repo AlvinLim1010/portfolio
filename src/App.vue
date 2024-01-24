@@ -1,6 +1,6 @@
 <template>
   <div>
-    <NavBar class="sticky top-0 z-50" />
+    <NavBar />
     <router-view class="gradient-bg" />
     <Footer class="sticky bottom-0 z-50" />
   </div>
