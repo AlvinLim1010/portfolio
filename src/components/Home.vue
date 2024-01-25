@@ -34,7 +34,6 @@
             Please browse through the website to learn more about me using the Navigation Bar.
           </div>
         </div>
-
       </div>
 
       <div class="w-full sm:w-2/5 p-10" style="height: calc(100vh - 348px);">
@@ -45,16 +44,7 @@
     </div>
 
     <div class="flex sm:flex-row">
-      <div class="flex flex-col sm:flex-row rounded shadow-2xl w-full p-12 mx-20 mb-2 border border-gray-600 border-2">
-        <div 
-          v-for="(info, index) in bottomInfo"
-          :key="index"
-          class="sm:w-1/4 text-center"
-        >
-          <p class="text-5xl mb-3 font-bold">{{ info.result }}</p>
-          <span class="text-sm text-gray-200 font-semibold">{{ info.title }}</span>
-        </div>
-      </div>
+      <AwardsInfo />
     </div>
   </div>
 </template>
@@ -63,11 +53,14 @@
 import Typed from 'typed.js';
 import { DownloadIcon as DownloadIconSolid} from '@heroicons/vue/solid';
 
+import AwardsInfo from '@/components/HomePage/AwardsInfo.vue'
+
 
 export default {
   name: "HomePage",
   components: {
     DownloadIconSolid,
+    AwardsInfo
   },
   mounted() {
     this.initTyped();
@@ -77,12 +70,6 @@ export default {
   },
   data() {
     return {
-      bottomInfo: [
-        { title: "EXPERIENCES (YRS)", result: "0.5" },
-        { title: "AWARDS", result: "2" },
-        { title: "PROJECTS", result: "10+" },
-        { title: "USERS", result: "~10" },
-      ],
       jobRoles: [
         "Software Engineer!",
         "AI Developer!",
@@ -165,7 +152,4 @@ export default {
     box-shadow: 0 0 0 6px #4285F4, 0 0 0 6px #2962FF;
   }
 }
-
-
-
 </style>

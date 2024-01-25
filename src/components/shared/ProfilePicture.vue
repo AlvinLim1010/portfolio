@@ -1,32 +1,37 @@
 <template>
-  <div v-if="isOpen" class="modal-overlay" @click="closeModal">
-    <div class="modal-container" @click.stop>
-      <button @click="closeModal" class="modal-close-button">&times;</button>
+  <div v-if="isOpen" class="picture-overlay" @click="closePicture">
+    <div class="picture-container" @click.stop>
+      <button @click="closePicture" class="picture-close-button"><XIconSolid class="w-6 h-5" /></button>
       <img
         src="@/assets/pictures/YH_Picture.jpg"
         alt="Large Image"
-        class="modal-image"
+        class="picture-image"
       />
     </div>
   </div>
 </template>
   
-  <script>
+<script>
+import { XIcon as XIconSolid} from "@heroicons/vue/solid"
+
 export default {
-  name: "ModalPicture",
+  name: "ProfilePicture",
+  components: {
+    XIconSolid
+  },
   props: {
     isOpen: Boolean,
   },
   methods: {
-    closeModal() {
+    closePicture() {
       this.$emit("close");
     },
   },
 };
 </script>
   
-  <style scoped>
-.modal-overlay {
+<style scoped>
+.picture-overlay {
   position: fixed;
   top: 10;
   left: 0;
@@ -39,7 +44,7 @@ export default {
   z-index: 100;
 }
 
-.modal-container {
+.picture-container {
   background-color: pink;
   padding: 10px;
   max-width: 40%;
@@ -52,16 +57,16 @@ export default {
   z-index: 100;
 }
 
-.modal-image {
+.picture-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
   z-index: 100;
 }
 
-.modal-close-button {
+.picture-close-button {
   position: absolute;
-  top: 0px;
+  top: 15px;
   right: 15px;
   background: none;
   border: none;
@@ -72,14 +77,14 @@ export default {
 }
 
 @media (max-width: 500px) {
-  .modal-container {
+  .picture-container {
     max-width: 80%;
     max-height: 80%;
   }
 }
 
 @media (min-width: 768px) {
-  .modal-container {
+  .picture-container {
     max-width: 20%;
     max-height: 80%;
   }

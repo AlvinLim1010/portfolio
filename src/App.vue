@@ -6,12 +6,6 @@
   </div>
 </template>
 
-<style scoped>
-.gradient-bg {
-  background: linear-gradient(to bottom, #B0BEC5, #78909C);
-}
-</style>
-
 <script>
 import NavBar from '@/components/shared/NavBar';
 import Footer from '@/components/shared/Footer';
@@ -23,3 +17,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.gradient-bg {
+  background: linear-gradient(to bottom, #B0BEC5, #78909C);
+}
+</style>

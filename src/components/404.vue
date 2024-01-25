@@ -1,6 +1,7 @@
 <template>
   <main
     class="grid min-h-full place-items-center bg-white px-6 py-24 sm:py-32 lg:px-8"
+    style="height: calc(81vh - 6px);"
   >
     <div class="text-center">
       <h1

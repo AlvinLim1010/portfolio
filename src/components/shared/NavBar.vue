@@ -18,7 +18,7 @@
         
         <!-- Picture Logo -->
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-          <a @click="openModal">
+          <a @click="openProfilePicture">
             <img class="h-10 w-10 rounded-full object-cover" src="@/assets/pictures/YH_Picture.jpg"
               alt="My Picture">
           </a>
@@ -58,25 +58,25 @@
       </div>
     </div>
   </nav>
-    <Modal 
-      :isOpen="isModalOpen" 
-      @close="closeModal" 
+    <ProfilePicture 
+      :isOpen="isProfilePictureOpen" 
+      @close="closeProfilePicture" 
     />
   </div>
 
 </template>
   
 <script>
-import Modal from './Modal.vue';
+import ProfilePicture from './ProfilePicture.vue';
 
 export default {
   name: "NavBar",
   components: {
-    Modal,
+    ProfilePicture,
   },
   data() {
     return {
-      isModalOpen: false,
+      isProfilePictureOpen: false,
       isMobileMenuOpen: false,
       routes: [
         { path: '/', label: 'Home' },
@@ -87,11 +87,11 @@ export default {
     };
   },
   methods: {
-    openModal() {
-      this.isModalOpen = true;
+    openProfilePicture() {
+      this.isProfilePictureOpen = true;
     },
-    closeModal() {
-      this.isModalOpen = false;
+    closeProfilePicture() {
+      this.isProfilePictureOpen = false;
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen;
