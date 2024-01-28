@@ -1,17 +1,17 @@
 <template>
   <div class="bg-white p-4 rounded shadow-md">
     <form @submit.prevent="submitForm">
-      <div class="space-y-12">
-        <div class="border-b border-gray-900/10 pb-12">
+      <div>
+        <div class="border-b border-gray-900/10 pb-6">
           <h2 class="text-2xl font-bold leading-7 text-gray-900">
             GET IN TOUCH!
           </h2>
-          <p class="mt-2 text-sm leading-6 text-gray-600">
+          <p class="mt-2 text-sm text-gray-600">
             Connect with me for job opportunities, collaborations, or any
             inquiries. I look forward to hearing from you!
           </p>
 
-          <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div class="mt-4 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div class="sm:col-span-3">
               <label
                 for="first-name"

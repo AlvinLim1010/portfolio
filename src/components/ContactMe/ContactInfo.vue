@@ -2,20 +2,20 @@
   <div class="tracking-wide text-gray-900">
     <div>
       <MailIcon class="w-16 inline" />
-      <div class="text-xl font-bold inline">Email:</div>
+      <div class="text-xl font-bold inline">Email: </div>
       <div class="text-m font-semibold inline">
         <a
           :href="emailLink"
           class="text-indigo-600 hover:underline focus:underline focus:outline-indigo-600"
         >
-          {{ myEmail }}
+           {{ myEmail }}
         </a>
       </div>
     </div>
 
     <div>
       <PhoneIcon class="w-16 inline" />
-      <div class="text-xl font-bold inline">Phone(MY):</div>
+      <div class="text-xl font-bold inline">Phone(MY): </div>
       <div class="text-md font-semibold inline">
         {{ myPhone }}
       </div>

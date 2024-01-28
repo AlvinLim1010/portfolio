@@ -6,6 +6,7 @@
       >
         About Me
       </div>
+      <AboutMe />
     </div>
     <div>
       <div 
@@ -21,17 +22,22 @@
       >
         Testimonials
       </div>
+      <Testimonials />
     </div>
   </div>
 </template>
 
 <script>
 import Timeline from "@/components/AboutMe/Timeline"
+import Testimonials from "@/components/AboutMe/Testimonials"
+import AboutMe from "@/components/AboutMe/AboutMe"
 
 export default {
   name: 'AboutPage',
   components: {
-    Timeline
+    AboutMe,
+    Timeline,
+    Testimonials,
   }
 }
 </script>
