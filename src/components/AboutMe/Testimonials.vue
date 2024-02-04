@@ -13,13 +13,22 @@
           class="flex flex-col w-full rounded-lg shadow bg-white px-10 py-5"
         >
           <div class="mt-4 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-6">
-            <div class="lg:col-span-2">
-              <div class="text-gray-800 flex justify-between text-xl font-bold">
+            <div class="lg:col-span-1 ml-5">
+              <div v-if="testimonial.image" class="text-gray-800 flex justify-between text-xl font-bold">
                 {{ testimonial.image }}
+              </div>
+              <div v-else class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full">
+                <svg 
+                  class="absolute w-12 h-12 text-gray-400 -left-1" 
+                  fill="currentColor" 
+                  viewBox="0 0 20 20" 
+                >
+                  <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+                </svg>
               </div>
             </div>
               
-            <div class="lg:col-span-4">
+            <div class="lg:col-span-5">
               <div class="text-gray-800 flex justify-between text-xl font-bold">
                 {{ testimonial.author }}
               </div>
@@ -31,6 +40,18 @@
 
           <div class="text-gray-600 flex justify-between text-sm font-semibold mt-2">
             {{ testimonial.text }}
+          </div>
+        </div>
+      </div>
+
+      <div v-if="testimonials.length === 0">
+        <div
+          class="flex flex-col w-full rounded-lg shadow bg-white px-10 py-5"
+        >
+          <div class="mt-4 grid grid-cols-1 gap-x-6 gap-y-8 lg:grid-cols-6">
+            <div class="text-gray-600 flex justify-between text-sm font-semibold mt-2">
+              No Testimonials
+            </div>
           </div>
         </div>
       </div>
@@ -77,9 +98,7 @@ export default {
     return {
       currentIndex: 0,
       testimonials: [
-        { image: "", text: "Testimonial 1", author: "Author 1", place: "Author 1" },
-        { image: "", text: "Testimonial 2", author: "Author 2", place: "Author 1" },
-        { image: "", text: "Testimonial 3", author: "Author 3", place: "Author 1" },
+        // { image: "", text: "Testimonial 1", author: "Author 1", place: "Author 1" },
       ],
     };
   },
