@@ -10,7 +10,7 @@
             <div class="text-gray-900 inline">
               I am into 
             </div>
-            <div class="text-red-300 inline">
+            <div class="text-red-400 inline">
               <span ref="typewriter"></span>
             </div>
           </div>
