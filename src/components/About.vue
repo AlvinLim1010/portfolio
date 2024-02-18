@@ -12,9 +12,9 @@
         </div>
 
         <div class="w-full sm:w-2/5 p-10">
-          <div class="bg-white p-4 rounded shadow-md mb-4 sm:mr-8 ">
+          <!-- <div class="bg-white p-4 rounded shadow-md mb-4 sm:mr-8 ">
             ThreeJS Hello Animation
-          </div>
+          </div> -->
         </div>
       </div>
     </div>

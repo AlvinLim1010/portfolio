@@ -37,9 +37,9 @@
       </div>
 
       <div class="w-full sm:w-2/5 p-10" style="height: calc(100vh - 380px);">
-        <div class="p-4 h-full">
+        <!-- <div class="p-4 h-full">
           ThreeJS Photo Animation
-        </div>
+        </div> -->
       </div>
     </div>
 
