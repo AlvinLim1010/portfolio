@@ -18,12 +18,14 @@
       >
         Video Demo
       </button>
+      <VideoPopUp :is-open="showPopup" :videoSrc="video" @close="videoDemo" />
     </div>
   </div>
 </template>
 
 <script>
 import CardSlideUp from "@/components/MyProjects/CardSlideUp";
+import VideoPopUp from "@/components/MyProjects/VideoPopUp";
 
 export default {
   name: "ProjectCards",
@@ -36,13 +38,19 @@ export default {
   },
   components: {
     CardSlideUp,
+    VideoPopUp
+  },
+  data() {
+    return {
+      showPopup: false,
+    };
   },
   methods: {
     goToCode() {
       window.open(this.code, '_blank');
     },
     videoDemo() {
-      this.isProfilePictureOpen = true;
+      this.showPopup = !this.showPopup;
     },
   }
 };
