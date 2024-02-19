@@ -2,7 +2,7 @@
   <div>
     <NavBar />
     <router-view class="gradient-bg py-4" />
-    <Footer class="sticky bottom-0 z-50" />
+    <Footer class="sticky bottom-0 z-40" />
   </div>
 </template>
 

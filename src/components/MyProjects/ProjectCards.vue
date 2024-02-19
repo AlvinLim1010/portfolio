@@ -18,7 +18,12 @@
       >
         Video Demo
       </button>
-      <VideoPopUp :is-open="showPopup" :videoSrc="video" @close="videoDemo" />
+      <VideoPopUp 
+        :title="title"
+        :is-open="showPopup" 
+        :videoSrc="video"
+        @close="videoDemo" 
+       />
     </div>
   </div>
 </template>

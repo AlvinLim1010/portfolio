@@ -1,8 +1,12 @@
 <template>
-  <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50" v-if="isOpen" @click="closePopup">
+  <div 
+    class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50" 
+    v-if="isOpen" 
+    @click="closePopup"
+  >
     <div class="bg-white rounded-lg w-3/4 h-3/5 p-8">
       <div class="flex justify-between items-center mb-10">
-        <h2>Video Popup</h2>
+        <h2>{{ title }} Demo Video</h2>
         <span class="cursor-pointer text-2xl" @click.stop="closePopup">&times;</span>
       </div>
       <div class="text-center">
@@ -21,6 +25,10 @@
 <script>
 export default {
   props: {
+    title: {
+      type: String,
+      required: true,
+    },
     isOpen: {
       type: Boolean,
       required: true,
