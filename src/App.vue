@@ -1,30 +1,25 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <NavBar />
+    <router-view class="gradient-bg py-4" />
+    <Footer class="sticky bottom-0 z-40" />
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import NavBar from '@/components/shared/NavBar';
+import Footer from '@/components/shared/Footer';
 
-nav {
-  padding: 30px;
+export default {
+  components: {
+    NavBar,
+    Footer
+  }
 }
+</script>
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+<style scoped>
+.gradient-bg {
+  background: linear-gradient(to bottom, #B0BEC5, #78909C);
 }
 </style>
