@@ -1,6 +1,7 @@
 <template>
   <div class="bg-white p-4 rounded shadow-md">
-    <form @submit.prevent="submitForm">
+    <!-- <form @submit.prevent="submitForm"> -->
+    <form>
       <div>
         <div class="border-b border-gray-900/10 pb-6">
           <h2 class="text-2xl font-bold leading-7 text-gray-900">
@@ -69,7 +70,7 @@
             <div class="col-span-full">
               <label
                 for="message"
-                class="block text-sm font-medium leading-6 text-gray-900"
+                class="block text-sm font-medium leading-4 text-gray-900"
                 >Message</label
               >
               <div class="mt-2">
@@ -87,20 +88,24 @@
         </div>
       </div>
 
-      <div class="mt-3 flex items-center justify-end gap-x-5">
-        <button
-          @click="cancelForm"
-          type="button"
-          class="text-sm font-semibold leading-6 text-gray-900"
-        >
-          Cancel
-        </button>
-        <button
-          type="submit"
-          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-        >
-          Send
-        </button>
+      <div class="flex justify-between items-center gap-x-5 mt-3">
+        <div class="border border-1 border-black rounded-md">
+          <div class="bg-gray-400 rounded-md px-4 py-1">
+            <div class="text-xs md:text-base text-gray-900 font-semibold">The Contact Form is currently disabled. I apologize for any inconvenience.</div>
+          </div>
+        </div>
+
+        <div class="flex gap-x-5">
+          <button @click="cancelForm" type="button" class="text-sm font-semibold leading-6 text-gray-900">
+            Cancel
+          </button>
+          <button 
+            type="submit" 
+            class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
+            Send
+          </button>
+        </div>
       </div>
     </form>
   </div>
