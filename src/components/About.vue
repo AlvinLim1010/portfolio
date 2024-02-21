@@ -7,7 +7,7 @@
         About Me
       </div>
       <div class="flex flex-col sm:flex-row">
-        <div class="ml-4 w-full sm:w-3/5 sm:ml-8">
+        <div class="w-full sm:w-3/5 sm:ml-8">
           <AboutMe />
         </div>
 

@@ -71,10 +71,10 @@ export default {
   data() {
     return {
       jobRoles: [
-        "Software Engineer!",
-        "AI Developer!",
-        "Full-Stack Developer!",
-        "Machine Learning Engineer!"
+        "Software Engineering!",
+        "AI Development!",
+        "Full-Stack Development!",
+        "Machine Learning Engineering!"
       ]
     };
   },
